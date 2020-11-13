@@ -19,7 +19,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean compile test jacoco:report'
+    goals: 'clean compile test jacoco:report dependency-check:check'
 
 - task: PublishTestResults@2
   inputs:
