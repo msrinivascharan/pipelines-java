@@ -79,11 +79,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<distributionManagement>
-		<repository>
-			<id>artifactory</id>
-			<name>cal.ms.com_CI_Builds</name>
-			<url>http://localhost:8081/artifactory/cal.ms.com_CI_Builds</url>
-		</repository>
-	</distributionManagement>
 </project>
