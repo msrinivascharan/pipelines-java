@@ -17,20 +17,10 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    goals: 'clean compile'
-
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'test jacoco:report'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-
-
+    goals: 'clean compile test jacoco:report dependency-check:check'
+    sonarQubeRunAnalysis: true
+    isJacocoCoverageReportXML: true
+    sqMavenPluginVersionChoice: 'latest'
 
 - task: PublishTestResults@2
   inputs:
@@ -38,13 +28,3 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     failTaskOnFailedTests: true
     testRunTitle: 'Unit test reports'
-
-
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'dependency-check:check'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
