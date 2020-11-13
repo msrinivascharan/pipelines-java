@@ -18,9 +18,6 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     goals: 'clean compile test jacoco:report dependency-check:check'
-    sonarQubeRunAnalysis: true
-    isJacocoCoverageReportXML: true
-    sqMavenPluginVersionChoice: 'latest'
 
 - task: PublishTestResults@2
   inputs:
