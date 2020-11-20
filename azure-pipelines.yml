@@ -32,3 +32,8 @@ steps:
     scanPath: '/*'
     format: 'HTML'
     reportsDirectory: '/SCAreports'
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'Sonarcloud-AzureDevOps'
+    organization: 'msrinivascharan'
+    scannerMode: 'Other'
