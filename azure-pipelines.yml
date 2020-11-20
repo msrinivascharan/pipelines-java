@@ -17,7 +17,8 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    goals: 'clean compile test jacoco:report dependency-check:check'
+    #goals: 'clean compile test jacoco:report dependency-check:check'
+     goals: 'clean compile test'
 
 - task: PublishTestResults@2
   inputs:
@@ -26,12 +27,7 @@ steps:
     failTaskOnFailedTests: true
     testRunTitle: 'Unit test reports'
 
-- task: dependency-check-build-task@5
-  inputs:
-    projectName: 'pipelines-java'
-    scanPath: '/*'
-    format: 'HTML'
-    reportsDirectory: '/SCAreports'
+
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'Sonarcloud-AzureDevOps'
