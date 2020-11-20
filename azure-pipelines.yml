@@ -20,16 +20,10 @@ steps:
     #goals: 'clean compile test jacoco:report dependency-check:check'
      goals: 'clean compile test'
 
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
     failTaskOnFailedTests: true
     testRunTitle: 'Unit test reports'
-
-
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'Sonarcloud-AzureDevOps'
-    organization: 'msrinivascharan'
-    scannerMode: 'Other'
