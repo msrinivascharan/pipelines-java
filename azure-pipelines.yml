@@ -33,8 +33,6 @@ steps:
     SonarCloud: 'Sonarcloud-AzureDevOps'
     organization: 'msrinivascharan'
     scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'pipelines-java'
-    cliProjectName: 'pipelines-java'
-    cliSources: '.'
+    configMode: 'file'
+    cliProjectKey: 
 - task: SonarCloudAnalyze@1
