@@ -37,3 +37,4 @@ steps:
     cliProjectKey: 'pipelines-java'
     cliProjectName: 'pipelines-java'
     cliSources: '.'
+- task: SonarCloudAnalyze@1
