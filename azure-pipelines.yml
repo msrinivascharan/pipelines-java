@@ -25,3 +25,10 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     failTaskOnFailedTests: true
     testRunTitle: 'Unit test reports'
+
+- task: dependency-check-build-task@5
+  inputs:
+    projectName: 'pipelines-java'
+    scanPath: '/*'
+    format: 'HTML'
+    reportsDirectory: '/SCAreports'
