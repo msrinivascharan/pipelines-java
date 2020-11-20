@@ -32,5 +32,7 @@ steps:
   inputs:
     SonarCloud: 'Sonarcloud-AzureDevOps'
     organization: 'msrinivascharan'
-    scannerMode: 'Other'
+    scannerMode: 'CLI'
+    configMode: 'file'
+    cliProjectKey: 
 - task: SonarCloudAnalyze@1
