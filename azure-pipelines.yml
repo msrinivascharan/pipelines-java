@@ -27,3 +27,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     failTaskOnFailedTests: true
     testRunTitle: 'Unit test reports'
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'azdevops-sonarcloud'
+    organization: 'msrinivascharan'
+    scannerMode: 'Other'
+
+- task: SonarCloudAnalyze@1
