@@ -29,10 +29,6 @@ steps:
     testRunTitle: 'Unit test reports'
 
 
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: 
 
 - task: SonarCloudPrepare@1
   inputs:
